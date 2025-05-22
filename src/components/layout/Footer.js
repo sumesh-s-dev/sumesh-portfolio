@@ -3,12 +3,11 @@ import { FiGithub, FiLinkedin, FiTwitter, FiMail } from 'react-icons/fi';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  
+
   const socialLinks = [
-    { href: 'https://github.com/sumesh', icon: FiGithub, label: 'GitHub' },
-    { href: 'https://linkedin.com/in/sumesh', icon: FiLinkedin, label: 'LinkedIn' },
-    { href: 'https://twitter.com/sumesh', icon: FiTwitter, label: 'Twitter' },
-    { href: 'mailto:contact@sumesh.dev', icon: FiMail, label: 'Email' },
+    { href: 'https://github.com/sumesh-s-dev', icon: FiGithub, label: 'GitHub' },
+    { href: 'https://www.linkedin.com/in/s-sumesh-759132308/', icon: FiLinkedin, label: 'LinkedIn' },
+    { href: 'mailto:sumesh2003nov5@gmail.com', icon: FiMail, label: 'Email' },
   ];
 
   const footerLinks = [
@@ -73,10 +72,10 @@ const Footer = () => {
               Feel free to reach out if you have any questions or want to work together.
             </p>
             <a
-              href="mailto:contact@sumesh.dev"
+              href="mailto:sumesh2003nov5@gmail.com"
               className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 transition-colors duration-200"
             >
-              contact@sumesh.dev
+              sumesh2003nov5@gmail.com
             </a>
           </div>
         </div>

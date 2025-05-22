@@ -23,7 +23,7 @@ const staggerContainer = {
   }
 };
 
-const GitHubStats = ({ username = 'sumesh' }) => {
+const GitHubStats = ({ username = 'sumesh-s-dev' }) => {
   const [githubData, setGithubData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -170,7 +170,7 @@ const GitHubStats = ({ username = 'sumesh' }) => {
               className="w-24 h-24 rounded-full"
             />
           </div>
-          
+
           {/* Profile Info */}
           <div className="flex-grow text-center sm:text-left">
             <h3 className="text-xl font-bold">{data.user.name || data.user.login}</h3>
@@ -185,7 +185,7 @@ const GitHubStats = ({ username = 'sumesh' }) => {
                 @{data.user.login}
               </a>
             </p>
-            
+
             {/* Stats */}
             <div className="flex flex-wrap justify-center sm:justify-start gap-4">
               <div className="text-center">
@@ -208,7 +208,7 @@ const GitHubStats = ({ username = 'sumesh' }) => {
       {/* Contribution Stats */}
       <motion.div variants={fadeIn} className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
         <h3 className="text-lg font-semibold mb-4">Contribution Activity</h3>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg text-center">
             <p className="text-3xl font-bold text-primary-600 dark:text-primary-400">
@@ -229,7 +229,7 @@ const GitHubStats = ({ username = 'sumesh' }) => {
             <p className="text-sm text-gray-600 dark:text-gray-400">Issues</p>
           </div>
         </div>
-        
+
         <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 text-right">
           Last updated: {formatDate(data.contributionStats.lastUpdated)}
         </p>
@@ -238,7 +238,7 @@ const GitHubStats = ({ username = 'sumesh' }) => {
       {/* Language Stats */}
       <motion.div variants={fadeIn} className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
         <h3 className="text-lg font-semibold mb-4">Languages</h3>
-        
+
         <div className="space-y-3">
           {data.languageStats.slice(0, 5).map((lang) => (
             <div key={lang.language} className="space-y-1">
@@ -263,7 +263,7 @@ const GitHubStats = ({ username = 'sumesh' }) => {
       {/* Pinned Repositories */}
       <motion.div variants={fadeIn}>
         <h3 className="text-lg font-semibold mb-4">Featured Repositories</h3>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {data.pinnedRepos.map((repo) => (
             <div key={repo.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 flex flex-col h-full">
@@ -277,11 +277,11 @@ const GitHubStats = ({ username = 'sumesh' }) => {
                   {repo.name}
                 </a>
               </h4>
-              
+
               <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 flex-grow">
                 {repo.description || 'No description provided.'}
               </p>
-              
+
               {/* Topics */}
               {repo.topics && repo.topics.length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -295,7 +295,7 @@ const GitHubStats = ({ username = 'sumesh' }) => {
                   ))}
                 </div>
               )}
-              
+
               <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
                 {/* Language */}
                 {repo.language && (
@@ -307,14 +307,14 @@ const GitHubStats = ({ username = 'sumesh' }) => {
                     <span>{repo.language}</span>
                   </div>
                 )}
-                
+
                 <div className="flex items-center space-x-4">
                   {/* Stars */}
                   <div className="flex items-center">
                     <FiStar className="mr-1" />
                     <span>{repo.stars}</span>
                   </div>
-                  
+
                   {/* Forks */}
                   <div className="flex items-center">
                     <FiGitBranch className="mr-1" />
@@ -325,7 +325,7 @@ const GitHubStats = ({ username = 'sumesh' }) => {
             </div>
           ))}
         </div>
-        
+
         <div className="text-center mt-6">
           <a 
             href={`https://github.com/${username}`}

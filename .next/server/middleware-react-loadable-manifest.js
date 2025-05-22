@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST="{\"pages/index.js -> ../components/github/GitHubStats\":{\"id\":\"pages/index.js -> ../components/github/GitHubStats\",\"files\":[\"static/chunks/src_components_github_GitHubStats_js.js\"]}}"

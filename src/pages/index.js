@@ -6,13 +6,16 @@ import { FiArrowRight, FiGithub, FiExternalLink } from 'react-icons/fi';
 import dynamic from 'next/dynamic';
 
 // Dynamically import the GitHubStats component to avoid SSR issues
-const GitHubStats = dynamic(
-  () => import('../components/github/GitHubStats'),
-  { ssr: false, loading: () => (
-    <div className="flex justify-center items-center h-64">
-      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary-600"></div>
-    </div>
-  )}
+const GitHubStats = dynamic(() => 
+  import('../components/github/GitHubStats').then(mod => mod.default),
+  { 
+    ssr: false, 
+    loading: () => (
+      <div className="flex justify-center items-center h-64">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary-600"></div>
+      </div>
+    )
+  }
 );
 
 // Animation variants
@@ -77,10 +80,14 @@ export default function Home() {
             >
               <Link href="/projects" className="btn-primary">
                 View My Work
-                <FiArrowRight className="ml-2" />
+                <FiArrowRight className="ml-2" aria-hidden="true" />
               </Link>
               <Link href="/contact" className="btn-outline">
                 Get In Touch
+              </Link>
+              <Link href="/modern" className="btn-outline bg-gradient-to-r from-blue-500 to-purple-600 text-white border-0">
+                Modern Portfolio
+                <FiArrowRight className="ml-2" aria-hidden="true" />
               </Link>
             </motion.div>
           </motion.div>
@@ -108,21 +115,22 @@ export default function Home() {
               {/* Project Card 1 */}
               <div className="card overflow-hidden">
                 <div className="relative h-48 w-full">
-                  <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                    <span className="text-gray-500 dark:text-gray-400">Project Image</span>
-                  </div>
+                  <Image 
+                    src="/images/projects/gridlocked-cryptizer.jpg"
+                    alt="Gridlocked Cryptizer project screenshot"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Project One</h3>
+                  <h3 className="text-xl font-semibold mb-2">Gridlocked Cryptizer</h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    A brief description of the project and the technologies used.
+                    A simple and secure file encryption-decryption tool built using Java and MySQL. It allows users to encrypt and decrypt text-based data using a customized grid-based cipher.
                   </p>
                   <div className="flex space-x-4">
-                    <a href="#" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 flex items-center">
-                      <FiGithub className="mr-1" /> GitHub
-                    </a>
-                    <a href="#" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 flex items-center">
-                      <FiExternalLink className="mr-1" /> Live Demo
+                    <a href="https://github.com/sumesh-s-dev/gridlocked-cryptizer" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 flex items-center" aria-label="View GitHub repository for Gridlocked Cryptizer">
+                      <FiGithub className="mr-1" aria-hidden="true" /> GitHub
                     </a>
                   </div>
                 </div>
@@ -131,21 +139,22 @@ export default function Home() {
               {/* Project Card 2 */}
               <div className="card overflow-hidden">
                 <div className="relative h-48 w-full">
-                  <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                    <span className="text-gray-500 dark:text-gray-400">Project Image</span>
-                  </div>
+                  <Image 
+                    src="/images/projects/lumos-learning-app.jpg"
+                    alt="Lumos Learning App project screenshot"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Project Two</h3>
+                  <h3 className="text-xl font-semibold mb-2">Lumos Learning App</h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    A brief description of the project and the technologies used.
+                    An app designed for CP students to make learning the English alphabet fun and interactive. Combines visual animations, auditory cues, and a responsive drawing canvas.
                   </p>
                   <div className="flex space-x-4">
-                    <a href="#" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 flex items-center">
-                      <FiGithub className="mr-1" /> GitHub
-                    </a>
-                    <a href="#" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 flex items-center">
-                      <FiExternalLink className="mr-1" /> Live Demo
+                    <a href="https://github.com/sumesh-s-dev/lumos-learning-app" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 flex items-center" aria-label="View GitHub repository for Lumos Learning App">
+                      <FiGithub className="mr-1" aria-hidden="true" /> GitHub
                     </a>
                   </div>
                 </div>
@@ -154,21 +163,22 @@ export default function Home() {
               {/* Project Card 3 */}
               <div className="card overflow-hidden">
                 <div className="relative h-48 w-full">
-                  <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                    <span className="text-gray-500 dark:text-gray-400">Project Image</span>
-                  </div>
+                  <Image 
+                    src="/images/projects/portfolio-website.jpg"
+                    alt="Portfolio Website project screenshot"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Project Three</h3>
+                  <h3 className="text-xl font-semibold mb-2">Portfolio Website</h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    A brief description of the project and the technologies used.
+                    A modern, responsive portfolio website built with Next.js and Tailwind CSS. Showcases skills, projects, blog posts, and GitHub contributions.
                   </p>
                   <div className="flex space-x-4">
-                    <a href="#" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 flex items-center">
-                      <FiGithub className="mr-1" /> GitHub
-                    </a>
-                    <a href="#" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 flex items-center">
-                      <FiExternalLink className="mr-1" /> Live Demo
+                    <a href="https://github.com/sumesh-s-dev/portfolio-website" className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 flex items-center" aria-label="View GitHub repository for Portfolio Website">
+                      <FiGithub className="mr-1" aria-hidden="true" /> GitHub
                     </a>
                   </div>
                 </div>
@@ -178,7 +188,7 @@ export default function Home() {
             <motion.div variants={fadeIn} className="text-center mt-12">
               <Link href="/projects" className="btn-outline">
                 View All Projects
-                <FiArrowRight className="ml-2" />
+                <FiArrowRight className="ml-2" aria-hidden="true" />
               </Link>
             </motion.div>
           </motion.div>
@@ -204,7 +214,7 @@ export default function Home() {
 
             <motion.div variants={fadeIn} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 text-center">
               {['JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Express', 
-                'MongoDB', 'PostgreSQL', 'GraphQL', 'AWS', 'Docker', 'Tailwind CSS'].map((skill) => (
+                'MongoDB', 'PostgreSQL', 'AWS', 'Docker', 'Tailwind CSS'].map((skill) => (
                 <div key={skill} className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
                   <p className="font-medium">{skill}</p>
                 </div>
@@ -232,7 +242,7 @@ export default function Home() {
             </motion.div>
 
             <motion.div variants={fadeIn}>
-              <GitHubStats username="sumesh" />
+              <GitHubStats username="sumesh-s-dev" />
             </motion.div>
           </motion.div>
         </div>
@@ -263,7 +273,7 @@ export default function Home() {
             <motion.div variants={fadeIn}>
               <Link href="/contact" className="btn bg-white text-primary-600 hover:bg-gray-100 focus:ring-white">
                 Get In Touch
-                <FiArrowRight className="ml-2" />
+                <FiArrowRight className="ml-2" aria-hidden="true" />
               </Link>
             </motion.div>
           </motion.div>

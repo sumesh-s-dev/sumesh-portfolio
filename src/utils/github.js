@@ -7,7 +7,7 @@
  * @param {string} username - GitHub username
  * @returns {Promise<Object>} - GitHub user data
  */
-export async function fetchGitHubUser(username) {
+export async function fetchGitHubUser(username = 'sumesh-s-dev') {
   try {
     const response = await fetch(`https://api.github.com/users/${username}`, {
       headers: {
@@ -32,7 +32,7 @@ export async function fetchGitHubUser(username) {
  * @param {number} limit - Maximum number of repositories to fetch
  * @returns {Promise<Array>} - Array of repository data
  */
-export async function fetchPinnedRepos(username, limit = 6) {
+export async function fetchPinnedRepos(username = 'sumesh-s-dev', limit = 6) {
   try {
     // GitHub API doesn't have a direct endpoint for pinned repos
     // So we fetch all repos and sort them by stars
@@ -50,7 +50,7 @@ export async function fetchPinnedRepos(username, limit = 6) {
     }
 
     const repos = await response.json();
-    
+
     // Sort by stars and get the top ones
     return repos
       .sort((a, b) => b.stargazers_count - a.stargazers_count)
@@ -77,7 +77,7 @@ export async function fetchPinnedRepos(username, limit = 6) {
  * @param {string} username - GitHub username
  * @returns {Promise<Object>} - Contribution statistics
  */
-export async function fetchContributionStats(username) {
+export async function fetchContributionStats(username = 'sumesh-s-dev') {
   try {
     // GitHub API doesn't provide contribution stats directly
     // This is a simplified version that gets total commits from the events API
@@ -92,20 +92,20 @@ export async function fetchContributionStats(username) {
     }
 
     const events = await response.json();
-    
+
     // Count push events (commits)
     const pushEvents = events.filter(event => event.type === 'PushEvent');
     const totalCommits = pushEvents.reduce((total, event) => total + event.payload.commits.length, 0);
-    
+
     // Count other contribution types
     const pullRequestEvents = events.filter(event => 
       event.type === 'PullRequestEvent' && event.payload.action === 'opened'
     ).length;
-    
+
     const issueEvents = events.filter(event => 
       event.type === 'IssuesEvent' && event.payload.action === 'opened'
     ).length;
-    
+
     return {
       totalCommits,
       pullRequests: pullRequestEvents,
@@ -128,7 +128,7 @@ export async function fetchContributionStats(username) {
  * @param {string} username - GitHub username
  * @returns {Promise<Object>} - Object with languages and their usage percentages
  */
-export async function fetchLanguageStats(username) {
+export async function fetchLanguageStats(username = 'sumesh-s-dev') {
   try {
     const response = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`, {
       headers: {
@@ -141,7 +141,7 @@ export async function fetchLanguageStats(username) {
     }
 
     const repos = await response.json();
-    
+
     // Count languages across all repos
     const languageCounts = {};
     repos.forEach(repo => {
@@ -149,7 +149,7 @@ export async function fetchLanguageStats(username) {
         languageCounts[repo.language] = (languageCounts[repo.language] || 0) + 1;
       }
     });
-    
+
     // Convert to percentages
     const totalRepos = repos.length;
     const languageStats = Object.entries(languageCounts).map(([language, count]) => ({
@@ -157,7 +157,7 @@ export async function fetchLanguageStats(username) {
       count,
       percentage: Math.round((count / totalRepos) * 100),
     }));
-    
+
     // Sort by usage
     return languageStats.sort((a, b) => b.count - a.count);
   } catch (error) {
@@ -171,14 +171,14 @@ export async function fetchLanguageStats(username) {
  * @param {string} username - GitHub username
  * @returns {Promise<Object>} - All GitHub data
  */
-export async function getGitHubData(username) {
+export async function getGitHubData(username = 'sumesh-s-dev') {
   const [user, pinnedRepos, contributionStats, languageStats] = await Promise.all([
     fetchGitHubUser(username),
     fetchPinnedRepos(username),
     fetchContributionStats(username),
     fetchLanguageStats(username),
   ]);
-  
+
   return {
     user,
     pinnedRepos,

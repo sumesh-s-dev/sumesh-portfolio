@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiGithub, FiExternalLink, FiFilter } from 'react-icons/fi';
@@ -30,79 +31,43 @@ const staggerContainer = {
 };
 
 export default function Projects() {
-  // Sample project data
+  // Project data
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-featured e-commerce platform with product management, cart functionality, and payment processing.',
-      image: '/placeholder.jpg',
-      tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      title: 'Gridlocked Cryptizer',
+      description: 'A simple and secure file encryption-decryption tool built using Java and MySQL. It allows users to encrypt and decrypt text-based data using a customized grid-based cipher.',
+      image: '/images/projects/gridlocked-cryptizer.jpg',
+      tags: ['Java', 'MySQL', 'Encryption', 'Security'],
       category: 'Full Stack',
-      github: 'https://github.com/sumesh/ecommerce',
-      demo: 'https://ecommerce-demo.sumesh.dev',
+      github: 'https://github.com/sumesh-s-dev/gridlocked-cryptizer',
       featured: true
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A Kanban-style task management application with drag-and-drop functionality and team collaboration features.',
-      image: '/placeholder.jpg',
-      tags: ['React', 'Redux', 'Firebase', 'Tailwind CSS'],
+      title: 'Lumos Learning App',
+      description: 'An app designed for CP students to make learning the English alphabet fun and interactive. Combines visual animations, auditory cues, and a responsive drawing canvas.',
+      image: '/images/projects/lumos-learning-app.jpg',
+      tags: ['JavaScript', 'HTML/CSS', 'Animation', 'Education'],
       category: 'Frontend',
-      github: 'https://github.com/sumesh/task-manager',
-      demo: 'https://tasks.sumesh.dev',
+      github: 'https://github.com/sumesh-s-dev/lumos-learning-app',
       featured: true
     },
     {
       id: 3,
-      title: 'Weather Dashboard',
-      description: 'A weather dashboard that displays current conditions and forecasts for multiple locations.',
-      image: '/placeholder.jpg',
-      tags: ['JavaScript', 'OpenWeather API', 'Chart.js'],
-      category: 'Frontend',
-      github: 'https://github.com/sumesh/weather-app',
-      demo: 'https://weather.sumesh.dev',
-      featured: false
-    },
-    {
-      id: 4,
-      title: 'Blog API',
-      description: 'A RESTful API for a blog platform with authentication, post management, and commenting functionality.',
-      image: '/placeholder.jpg',
-      tags: ['Node.js', 'Express', 'MongoDB', 'JWT'],
-      category: 'Backend',
-      github: 'https://github.com/sumesh/blog-api',
-      demo: null,
-      featured: false
-    },
-    {
-      id: 5,
       title: 'Portfolio Website',
-      description: 'A personal portfolio website built with Next.js and Tailwind CSS.',
-      image: '/placeholder.jpg',
+      description: 'A modern, responsive portfolio website built with Next.js and Tailwind CSS. Showcases skills, projects, blog posts, and GitHub contributions.',
+      image: '/images/projects/portfolio-website.jpg',
       tags: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
       category: 'Frontend',
-      github: 'https://github.com/sumesh/portfolio',
-      demo: 'https://sumesh.dev',
+      github: 'https://github.com/sumesh-s-dev/portfolio-website',
       featured: true
     },
-    {
-      id: 6,
-      title: 'Real-time Chat Application',
-      description: 'A real-time chat application with private messaging, group chats, and file sharing.',
-      image: '/placeholder.jpg',
-      tags: ['React', 'Socket.io', 'Node.js', 'MongoDB'],
-      category: 'Full Stack',
-      github: 'https://github.com/sumesh/chat-app',
-      demo: 'https://chat.sumesh.dev',
-      featured: false
-    }
   ];
 
   // Filter state
   const [filter, setFilter] = useState('All');
-  
+
   // Available categories for filtering
   const categories = ['All', 'Frontend', 'Backend', 'Full Stack'];
 
@@ -158,7 +123,7 @@ export default function Projects() {
               className="flex flex-wrap items-center justify-center gap-4 mb-12"
             >
               <span className="flex items-center text-gray-700 dark:text-gray-300">
-                <FiFilter className="mr-2" /> Filter by:
+                <FiFilter className="mr-2" aria-hidden="true" /> Filter by:
               </span>
               {categories.map(category => (
                 <button
@@ -169,6 +134,8 @@ export default function Projects() {
                       ? 'bg-primary-600 text-white'
                       : 'bg-gray-100 text-gray-800 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-200 dark:hover:bg-gray-600'
                   }`}
+                  aria-label={`Filter projects by ${category}`}
+                  aria-pressed={filter === category}
                 >
                   {category}
                 </button>
@@ -190,11 +157,15 @@ export default function Projects() {
                   >
                     {/* Project Image */}
                     <div className="relative h-48 w-full">
-                      <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-                        <span className="text-gray-500 dark:text-gray-400">Project Image</span>
-                      </div>
+                      <Image 
+                        src={project.image}
+                        alt={`${project.title} project screenshot`}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
                     </div>
-                    
+
                     {/* Project Content */}
                     <div className="p-6">
                       <div className="flex justify-between items-start mb-2">
@@ -205,11 +176,11 @@ export default function Projects() {
                           </span>
                         )}
                       </div>
-                      
+
                       <p className="text-gray-600 dark:text-gray-400 mb-4">
                         {project.description}
                       </p>
-                      
+
                       {/* Tags */}
                       <div className="flex flex-wrap gap-2 mb-4">
                         {project.tags.map(tag => (
@@ -221,7 +192,7 @@ export default function Projects() {
                           </span>
                         ))}
                       </div>
-                      
+
                       {/* Links */}
                       <div className="flex space-x-4">
                         <a 
@@ -229,8 +200,9 @@ export default function Projects() {
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 flex items-center"
+                          aria-label={`View GitHub repository for ${project.title}`}
                         >
-                          <FiGithub className="mr-1" /> GitHub
+                          <FiGithub className="mr-1" aria-hidden="true" /> GitHub
                         </a>
                         {project.demo && (
                           <a 
@@ -238,8 +210,9 @@ export default function Projects() {
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 flex items-center"
+                            aria-label={`View live demo for ${project.title}`}
                           >
-                            <FiExternalLink className="mr-1" /> Live Demo
+                            <FiExternalLink className="mr-1" aria-hidden="true" /> Live Demo
                           </a>
                         )}
                       </div>
@@ -287,13 +260,13 @@ export default function Projects() {
               I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
             </motion.p>
             <motion.div variants={fadeIn}>
-              <a 
+              <Link 
                 href="/contact" 
                 className="btn-primary inline-flex items-center"
               >
                 Let's Talk
-                <FiExternalLink className="ml-2" />
-              </a>
+                <FiExternalLink className="ml-2" aria-hidden="true" />
+              </Link>
             </motion.div>
           </motion.div>
         </div>

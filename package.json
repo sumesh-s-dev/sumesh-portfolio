@@ -1,36 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "portfolio-website",
-  "version": "1.0.0",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.20.3",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "nodemailer": "^6.10.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sumesh-s-dev/portfolio-backend.git"
-  },
-  "bugs": {
-    "url": "https://github.com/sumesh-s-dev/portfolio-backend/issues"
-  },
-  "homepage": "https://github.com/sumesh-s-dev/portfolio-backend#readme",
-  "description": ""
-=======
   "name": "sumesh-portfolio",
   "private": true,
   "version": "0.1.0",
@@ -47,9 +15,11 @@
     "date-fns": "^2.30.0",
     "framer-motion": "^10.16.4",
     "gray-matter": "^4.0.3",
-    "next": "^14.0.0",
+    "lucide-react": "^0.294.0",
+    "next": "^14.1.0",
     "next-mdx-remote": "^4.4.1",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.3.0",
     "react-dom": "^18.2.0",
     "react-github-calendar": "^4.5.7",
     "react-icons": "^4.11.0"
@@ -66,5 +36,4 @@
     "tailwindcss": "^3.3.3",
     "typescript": "^5.2.2"
   }
->>>>>>> 10fbd67 (Update portfolio with latest changes)
 }

@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['github.com', 'raw.githubusercontent.com'],
+    domains: ['github.com', 'raw.githubusercontent.com', 'via.placeholder.com'],
     formats: ['image/avif', 'image/webp'],
   },
   // Enable SWC minification for faster builds

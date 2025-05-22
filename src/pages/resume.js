@@ -29,13 +29,13 @@ export default function Resume() {
     name: 'Sumesh',
     title: 'Full Stack Developer',
     contact: {
-      email: 'contact@sumesh.dev',
-      phone: '+1 (123) 456-7890',
-      location: 'San Francisco, CA',
-      github: 'github.com/sumesh',
-      linkedin: 'linkedin.com/in/sumesh'
+      email: 'sumesh2003nov5@gmail.com',
+      phone: '+91 9778716121',
+      location: 'Kerala, India',
+      github: 'https://github.com/sumesh-s-dev',
+      linkedin: 'https://www.linkedin.com/in/s-sumesh-759132308/'
     },
-    summary: 'Experienced Full Stack Developer with a passion for creating efficient, scalable, and user-friendly web applications. Proficient in JavaScript, TypeScript, React, Node.js, and cloud technologies. Strong problem-solving skills and a commitment to writing clean, maintainable code.',
+    summary: 'Full Stack Developer with a passion for creating efficient, scalable, and user-friendly web applications. Proficient in JavaScript, TypeScript, React, Node.js, and cloud technologies. Strong problem-solving skills and a commitment to writing clean, maintainable code.',
     skills: {
       technical: [
         'JavaScript (ES6+)', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Express',
@@ -48,86 +48,55 @@ export default function Resume() {
         'Adaptability', 'Attention to Detail', 'Critical Thinking', 'Leadership'
       ]
     },
-    experience: [
-      {
-        title: 'Senior Full Stack Developer',
-        company: 'Tech Company',
-        location: 'San Francisco, CA',
-        period: 'January 2020 - Present',
-        responsibilities: [
-          'Lead development of multiple web applications using React, Node.js, and AWS',
-          'Architect and implement scalable backend services using microservices architecture',
-          'Optimize application performance, reducing load times by 40%',
-          'Mentor junior developers and conduct code reviews',
-          'Collaborate with product managers and designers to define product requirements',
-          'Implement CI/CD pipelines for automated testing and deployment'
-        ]
-      },
-      {
-        title: 'Full Stack Developer',
-        company: 'Digital Agency',
-        location: 'San Francisco, CA',
-        period: 'March 2018 - December 2019',
-        responsibilities: [
-          'Developed responsive web applications for clients across various industries',
-          'Built RESTful APIs using Node.js, Express, and MongoDB',
-          'Implemented authentication and authorization systems using JWT',
-          'Created reusable React components and custom hooks',
-          'Integrated third-party APIs and services',
-          'Participated in agile development processes'
-        ]
-      },
-      {
-        title: 'Frontend Developer',
-        company: 'Startup',
-        location: 'San Francisco, CA',
-        period: 'June 2016 - February 2018',
-        responsibilities: [
-          'Built user interfaces using React and Redux',
-          'Collaborated with designers to implement pixel-perfect designs',
-          'Improved website performance and accessibility',
-          'Developed responsive layouts for mobile and desktop',
-          'Participated in user testing and feedback sessions',
-          'Maintained and updated existing codebase'
-        ]
-      }
-    ],
     education: [
       {
-        degree: 'Master of Computer Science',
-        institution: 'University Name',
-        location: 'San Francisco, CA',
-        period: '2014 - 2016',
-        details: 'Specialized in web technologies and distributed systems. GPA: 3.8/4.0'
+        degree: 'Master of Computer Applications ',
+        institution: 'Lead College of Management, Autonomous, Palakkad',
+        location: 'Kerala, India',
+        period: '2024 - 2026',
+        details: 'Programming with Java, JavaScript, React, Generative AI, Advanced Database Management Systems, Python Web Programming, Internet of Things, Flutter Android Development, Cyber Security'
       },
       {
-        degree: 'Bachelor of Computer Science',
-        institution: 'University Name',
-        location: 'San Francisco, CA',
-        period: '2010 - 2014',
-        details: 'Graduated with honors. Focused on software engineering and database systems. GPA: 3.7/4.0'
+        degree: 'Bachelor of Computer Applications',
+        institution: 'Nehru Arts and science College, Autonomous, Coimbatore',
+        location: 'Tamil Nadu, India',
+        period: '2021 - 2024',
+        details: 'Python Programming, Java, Relational Database Management Systems, Oracle, Web Programming with PHP and MySQL, Visual Programming CGPA: 7.4/10.0'
       }
     ],
     certifications: [
       {
-        name: 'AWS Certified Solutions Architect',
-        issuer: 'Amazon Web Services',
-        date: '2022'
+        name: 'Data Analysis with Python',
+        issuer: 'FreeCodeCamp',
+        date: '2025'
       },
       {
-        name: 'Google Cloud Professional Developer',
-        issuer: 'Google Cloud',
-        date: '2021'
+        name: 'Google Data Analytics Certificate',
+        issuer: 'Coursera',
+        date: '2025'
       },
       {
-        name: 'MongoDB Certified Developer',
-        issuer: 'MongoDB',
-        date: '2020'
+        name: 'Scientific Computing with Python',
+        issuer: 'FreeCodeCamp',
+        date: '2025'
+      },
+      {
+        name: 'Introduction to Linux (LFS101)',
+        issuer: 'Linux Foundation',
+        date: '2025'
+      },
+      {
+        name: 'Introduction to Kaggle',
+        issuer: 'kaggle',
+        date: '2025'
       }
     ],
+    experience: [],
     languages: [
-      { name: 'English', level: 'Native' },
-      { name: 'Spanish', level: 'Intermediate' }
+      { name: 'English', level: 'Fluent' },
+      { name: 'Hindi', level: 'Intermediate' },
+      { name: 'Malayalam', level: 'Native'},
+      { name: 'Tamil', level: 'Communicative'}
     ]
   };
 
@@ -135,7 +104,7 @@ export default function Resume() {
     <>
       <Head>
         <title>Resume | Sumesh - Full Stack Developer</title>
-        <meta name="description" content="Professional resume of Sumesh, a Full Stack Developer with experience in modern web technologies." />
+        <meta name="description" content="Professional resume of Sumesh, a Full Stack Developer specializing in modern web technologies." />
       </Head>
 
       {/* Resume Header */}
@@ -157,16 +126,16 @@ export default function Resume() {
               className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8"
               variants={fadeIn}
             >
-              My professional background, skills, and experience
+              My professional background and skills
             </motion.p>
             <motion.div variants={fadeIn}>
               <a 
-                href="/resume/sumesh-resume.pdf" 
-                download
+                href="/resume/sumesh-resume-ats.html" 
+                download="sumesh-resume.pdf"
                 className="btn-primary inline-flex items-center"
               >
                 <FiDownload className="mr-2" />
-                Download PDF
+                Download Resume
               </a>
             </motion.div>
           </motion.div>
@@ -189,7 +158,7 @@ export default function Resume() {
             >
               <h2 className="text-3xl font-bold mb-2">{resumeData.name}</h2>
               <p className="text-xl text-primary-600 dark:text-primary-400 mb-4">{resumeData.title}</p>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                 <div className="space-y-2">
                   <div className="flex items-center">
@@ -252,7 +221,7 @@ export default function Resume() {
               className="p-8 border-b border-gray-200 dark:border-gray-700"
             >
               <h3 className="text-xl font-semibold mb-4">Skills</h3>
-              
+
               <div className="mb-6">
                 <h4 className="text-lg font-medium mb-2">Technical Skills</h4>
                 <div className="flex flex-wrap gap-2">
@@ -266,7 +235,7 @@ export default function Resume() {
                   ))}
                 </div>
               </div>
-              
+
               <div>
                 <h4 className="text-lg font-medium mb-2">Soft Skills</h4>
                 <div className="flex flex-wrap gap-2">
@@ -282,34 +251,6 @@ export default function Resume() {
               </div>
             </motion.div>
 
-            {/* Experience */}
-            <motion.div 
-              variants={fadeIn}
-              className="p-8 border-b border-gray-200 dark:border-gray-700"
-            >
-              <h3 className="text-xl font-semibold mb-6">Work Experience</h3>
-              
-              <div className="space-y-8">
-                {resumeData.experience.map((exp, index) => (
-                  <div key={index} className="relative pl-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-0.5 before:bg-gray-200 dark:before:bg-gray-700">
-                    <div className="absolute left-0 top-1.5 w-4 h-4 -ml-2 rounded-full bg-primary-600 dark:bg-primary-500"></div>
-                    <h4 className="text-lg font-medium">{exp.title}</h4>
-                    <div className="flex flex-wrap items-center text-sm text-gray-600 dark:text-gray-400 mb-2">
-                      <span className="font-medium text-gray-900 dark:text-white">{exp.company}</span>
-                      <span className="mx-2">•</span>
-                      <span>{exp.location}</span>
-                      <span className="mx-2">•</span>
-                      <span>{exp.period}</span>
-                    </div>
-                    <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1">
-                      {exp.responsibilities.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
 
             {/* Education */}
             <motion.div 
@@ -317,7 +258,7 @@ export default function Resume() {
               className="p-8 border-b border-gray-200 dark:border-gray-700"
             >
               <h3 className="text-xl font-semibold mb-6">Education</h3>
-              
+
               <div className="space-y-6">
                 {resumeData.education.map((edu, index) => (
                   <div key={index}>
@@ -341,7 +282,7 @@ export default function Resume() {
               className="p-8 border-b border-gray-200 dark:border-gray-700"
             >
               <h3 className="text-xl font-semibold mb-4">Certifications</h3>
-              
+
               <div className="space-y-3">
                 {resumeData.certifications.map((cert, index) => (
                   <div key={index} className="flex items-center">
@@ -362,7 +303,7 @@ export default function Resume() {
               className="p-8"
             >
               <h3 className="text-xl font-semibold mb-4">Languages</h3>
-              
+
               <div className="space-y-3">
                 {resumeData.languages.map((lang, index) => (
                   <div key={index} className="flex items-center">

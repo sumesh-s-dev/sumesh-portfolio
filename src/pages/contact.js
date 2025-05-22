@@ -31,7 +31,7 @@ export default function Contact() {
     subject: '',
     message: ''
   });
-  
+
   const [formStatus, setFormStatus] = useState({
     isSubmitting: false,
     isSubmitted: false,
@@ -51,7 +51,7 @@ export default function Contact() {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Set submitting state
     setFormStatus({
       isSubmitting: true,
@@ -59,7 +59,7 @@ export default function Contact() {
       isError: false,
       message: ''
     });
-    
+
     // Simulate API call with timeout
     setTimeout(() => {
       // In a real application, you would send the form data to your backend
@@ -70,7 +70,7 @@ export default function Contact() {
         isError: false,
         message: 'Thank you for your message! I will get back to you soon.'
       });
-      
+
       // Reset form
       setFormData({
         name: '',
@@ -131,7 +131,7 @@ export default function Contact() {
                 >
                   Contact Information
                 </motion.h2>
-                
+
                 <motion.div variants={fadeIn} className="space-y-6 mb-8">
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1">
@@ -141,15 +141,15 @@ export default function Contact() {
                       <h3 className="text-lg font-medium">Email</h3>
                       <p className="text-gray-600 dark:text-gray-400">
                         <a 
-                          href="mailto:contact@sumesh.dev" 
+                          href="mailto:sumesh2003nov5@gmail.com"
                           className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
                         >
-                          contact@sumesh.dev
+                          sumesh2003nov5@gmail.com
                         </a>
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1">
                       <FiMapPin className="w-6 h-6 text-primary-600 dark:text-primary-400" />
@@ -157,12 +157,12 @@ export default function Contact() {
                     <div className="ml-4">
                       <h3 className="text-lg font-medium">Location</h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        San Francisco, California
+                        Karipode, Palakkad, Kerala, India
                       </p>
                     </div>
                   </div>
                 </motion.div>
-                
+
                 <motion.div variants={fadeIn}>
                   <h3 className="text-lg font-medium mb-4">Connect with me</h3>
                   <div className="flex space-x-4">
@@ -184,18 +184,9 @@ export default function Contact() {
                     >
                       <FiLinkedin className="w-6 h-6" />
                     </a>
-                    <a 
-                      href="https://twitter.com/sumesh" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 transition-colors duration-200"
-                      aria-label="Twitter"
-                    >
-                      <FiTwitter className="w-6 h-6" />
-                    </a>
                   </div>
                 </motion.div>
-                
+
                 <motion.div 
                   variants={fadeIn}
                   className="mt-12 p-6 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700"
@@ -209,7 +200,7 @@ export default function Contact() {
                   </p>
                 </motion.div>
               </motion.div>
-              
+
               {/* Contact Form */}
               <motion.div
                 initial="hidden"
@@ -223,7 +214,7 @@ export default function Contact() {
                 >
                   Send Me a Message
                 </motion.h2>
-                
+
                 {formStatus.isSubmitted ? (
                   <motion.div 
                     variants={fadeIn}
@@ -267,7 +258,7 @@ export default function Contact() {
                         />
                       </div>
                     </div>
-                    
+
                     <div>
                       <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                         Subject
@@ -282,7 +273,7 @@ export default function Contact() {
                         className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
                       />
                     </div>
-                    
+
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                         Message
@@ -297,7 +288,7 @@ export default function Contact() {
                         className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
                       />
                     </div>
-                    
+
                     <div>
                       <button
                         type="submit"
@@ -320,7 +311,7 @@ export default function Contact() {
                         )}
                       </button>
                     </div>
-                    
+
                     {formStatus.isError && (
                       <div className="p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg text-red-800 dark:text-red-200">
                         <p>{formStatus.message}</p>
@@ -350,15 +341,22 @@ export default function Contact() {
             >
               My Location
             </motion.h2>
-            
+
             <motion.div 
               variants={fadeIn}
               className="h-96 bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden"
             >
-              {/* This would be replaced with an actual map component */}
-              <div className="w-full h-full flex items-center justify-center">
-                <p className="text-gray-500 dark:text-gray-400">Map will be displayed here</p>
-              </div>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31371.78696491142!2d76.6335!3d10.7719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba86dfa087d31ad%3A0xf542d6eb7a870a56!2sKaripode%2C%20Kerala!5e0!3m2!1sen!2sin!4v1652345678901!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen="" 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Karipode, Palakkad Map"
+                className="w-full h-full"
+              ></iframe>
             </motion.div>
           </motion.div>
         </div>

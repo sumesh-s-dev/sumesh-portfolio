@@ -1,36 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import { FiMenu, FiX, FiMoon, FiSun } from 'react-icons/fi';
+import { useTheme } from '../../context/ThemeContext';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { isDarkMode, toggleDarkMode } = useTheme();
   const router = useRouter();
-
-  // Check if dark mode is enabled on initial load
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const darkModeEnabled = localStorage.getItem('darkMode') === 'true';
-      setIsDarkMode(darkModeEnabled);
-      if (darkModeEnabled) {
-        document.documentElement.classList.add('dark');
-      }
-    }
-  }, []);
-
-  // Toggle dark mode
-  const toggleDarkMode = () => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('darkMode', 'false');
-    } else {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('darkMode', 'true');
-    }
-    setIsDarkMode(!isDarkMode);
-  };
 
   // Navigation links
   const navLinks = [
