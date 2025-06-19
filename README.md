@@ -57,7 +57,7 @@ A full-stack portfolio website built with MongoDB, Express.js, React.js, and Nod
    - Frontend: `http://localhost:3000`
    - API: `http://localhost:5000`
 
-## 📡 API Endpoints
+##  API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -81,7 +81,7 @@ mern-portfolio/
 └── README.md
 ```
 
-## 🔧 Features
+##  Features
 
 - Responsive design with dark/light theme
 - Redux state management
@@ -89,7 +89,7 @@ mern-portfolio/
 - Express.js REST API
 - Input validation and error handling
 
-## 📞 Contact
+##  Contact
 
 **Sumesh S.**
 - LinkedIn: [s-sumesh-759132308](https://www.linkedin.com/in/s-sumesh-759132308/)
