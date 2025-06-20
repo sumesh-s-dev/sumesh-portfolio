@@ -1,4 +1,4 @@
-# MERN Stack Portfolio Website
+# Portfolio Website
 
 A full-stack portfolio website built with MongoDB, Express.js, React.js, and Node.js featuring Redux state management and a contact system.
 
